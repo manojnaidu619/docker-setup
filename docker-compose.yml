@@ -1,0 +1,16 @@
+version: '3'
+services:
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+  backend:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./backend
+  nginx:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "8000:80"
